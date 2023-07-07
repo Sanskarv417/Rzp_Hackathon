@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>Home</title>
@@ -15,6 +15,136 @@
     <button type="submit" class="application-button" name="submit">Go to Application
     </button>
 </form>
+  </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href={{url_for('static', filename="style.css" )}}>
+  <style>
+    /* Additional inline styles */
+    .dashboard-container {
+      background-color: #f5f5f5;
+      padding: 2rem;
+    }
+  
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 2rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      text-align: center;
+    }
+  
+    h1 {
+      margin-bottom: 1rem;
+    }
+  
+    .upload-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+  
+    .upload-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      width: 200px;
+      transition: background-color 0.3s;
+    }
+  
+    .upload-label:hover {
+      background-color: #e5e5e5;
+    }
+  
+    .file-input {
+      display: none;
+    }
+  
+    .upload-text {
+      margin-left: 0.5rem;
+    }
+  
+    .upload-button {
+      background-color: #4caf50;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  
+    .upload-button:hover {
+      background-color: #45a049;
+    }
+  
+    .file-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 1rem;
+    }
+  
+    .file-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 0.5rem;
+      transition: background-color 0.3s;
+    }
+  
+    .file-box:hover {
+      background-color: #e5e5e5;
+    }
+  
+    .file-name {
+      text-align: center;
+    }
+  
+    .custom-container {
+      background-color: #f5f5f5;
+      padding: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Dashboard</h1>
+    <form id="model-upload-form" action="{{url_for('upload')}}" method="post">
+      <div class="upload-container">
+        <div class="container">
+          <h2>Upload Model</h2>
+          <div class="upload-box">
+            <input type="file" id="model-upload" name="modelfile" accept=".pkl" />
+            <!-- <label for="model-upload">Upload Model</label> -->
+          </div>
+          <button type="submit" class="upload-button" name="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="dashboard-container">
+    <form id="model-upload-form" action="{{url_for('application')}}" method="post">
+      <div class="upload-container">
+          <button type="submit" class="upload-button" name="submit">Go to application</button>
+      </div>
+    </form>
   </div>
 </body>
 </html>

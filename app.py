@@ -20,7 +20,13 @@ def home():
 def upload():
     model_file = request.form['modelfile']
     
-    #######work on model goes here########
+    # Work on the model using the model_file
+    
+    # Redirect to www.google.com
+    return redirect("http://www.google.com")
+
+@app.route('/application', methods=['POST'])
+def application():
     return render_template('dashboard.html')
 
 with open('model.pkl', 'rb') as f:
