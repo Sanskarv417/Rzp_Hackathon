@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href={{url_for('static', filename="style.css" )}}>
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Dashboard</h1>
+    <form id="model-upload-form" action="{{url_for('upload')}}" method="post">
+    <div class="upload-box">
+      <input type="file" id="model-upload" name="modelfile" accept=".pkl" />
+      <label for="model-upload">Upload Model</label>
+    </div>
+    <button type="submit" class="application-button" name="submit">Go to Application
+    </button>
+</form>
+  </div>
+</body>
+</html>
